@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+
+        <style>
+        .task-item.alta { border-left: 8px solid #FF6B6B; }
+        .task-item.media { border-left: 8px solid #FFD93D; }
+        .task-item.baixa { border-left: 8px solid #4ECDC4; }
+        .priority-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 2px solid black;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+        </style>
+        
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Gerenciador de Tarefas</h1>
+    <form id="taskForm">
+      <div class="form-group">
+        <label for="titulo">Título *</label>
+        <input type="text" id="titulo" required>
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="prioridade">Prioridade *</label>
+        <select id="prioridade" required>
+          <option value="baixa">Baixa</option>
+          <option value="media">Média</option>
+          <option value="alta">Alta</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">➕ Adicionar Tarefa</button>
+      <button type="button" id="clearBtn" class="btn btn-danger" style="margin-left: 10px;">🗑️ Limpar Tudo</button>
+    </form>
+    <div class="task-list" id="taskList"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
